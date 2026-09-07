@@ -28,13 +28,13 @@ class Distance:
             raise TypeError("other must be a Distance object or an integer")
         return self
 
-    def __mul__(self, other: Distance | int | float) -> Distance:
+    def __mul__(self, other: int | float) -> Distance:
         if isinstance(other, int | float):
             return Distance(self.km * other)
         else:
             raise TypeError("other must be a Distance object or an integer")
 
-    def __truediv__(self, other: Distance | int | float) -> Distance:
+    def __truediv__(self, other: int | float) -> Distance:
         if isinstance(other, int | float):
             return Distance(round(self.km / other, 2))
         else:
